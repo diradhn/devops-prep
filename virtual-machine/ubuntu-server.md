@@ -58,7 +58,7 @@ Dokumentasi ini menjelaskan langkah-langkah membuat Virtual Machine (VM) untuk U
 
 ---
 
-## 🔧 8. Instalasi Ubuntu Server (Subiquity CLI)
+### 🔧 8. Instalasi Ubuntu Server (Subiquity CLI)
 
 1. **Welcome**: Pilih bahasa → `Enter`  
 2. **Keyboard**: Biarkan default → `Done`  
@@ -82,13 +82,12 @@ Dokumentasi ini menjelaskan langkah-langkah membuat Virtual Machine (VM) untuk U
 ---
 
 ## 📦 Langkah Selanjutnya
-
 - Instal & Konfigurasi:
-  - Grafana
-  - Prometheus
-  - Node Exporter
-  - Nginx / HAProxy
-  - GitLab
+- Grafana
+- Prometheus
+- Node Exporter
+- Nginx / HAProxy
+- GitLab
 
 ---
 
