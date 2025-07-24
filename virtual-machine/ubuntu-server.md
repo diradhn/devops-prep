@@ -19,46 +19,45 @@ Dokumentasi ini menjelaskan langkah-langkah membuat Virtual Machine (VM) untuk U
 ---
 
 ## ⚙️ Langkah-Langkah
+1. Buat VM Baru
+   - Buka **VirtualBox**
+   - Klik tombol **New / Baru**
+   - Isi:
+     - **Name**: `Ubuntu-DevOps`
+     - **Type**: `Linux`
+     - **Version**: `Ubuntu (64-bit)`
+   - Klik **Next**
 
-### 1. Buat VM Baru
-- Buka **VirtualBox**
-- Klik tombol **New / Baru**
-- Isi:
-  - **Name**: `Ubuntu-DevOps`
-  - **Type**: `Linux`
-  - **Version**: `Ubuntu (64-bit)`
-- Klik **Next**
+2. Atur Memory (RAM)
+   - Minimum: **2048 MB**
+   - Rekomendasi: **4096 MB**
+   - Klik **Next**
 
-### 2. Atur Memory (RAM)
-- Minimum: **2048 MB**
-- Rekomendasi: **4096 MB**
-- Klik **Next**
+3. Buat Virtual Hard Disk
+   - Pilih: `Create a virtual hard disk now`
+   - Klik **Create**
 
-### 3. Buat Virtual Hard Disk
-- Pilih: `Create a virtual hard disk now`
-- Klik **Create**
+4. Tipe Hard Disk
+   - Pilih: `VDI (VirtualBox Disk Image)`
+   - Klik **Next**
 
-### 4. Tipe Hard Disk
-- Pilih: `VDI (VirtualBox Disk Image)`
-- Klik **Next**
+5. Ukuran Disk
+   - Masukkan: **30 GB**
+   - Klik **Create**
 
-### 5. Ukuran Disk
-- Masukkan: **30 GB**
-- Klik **Create**
+6. Pasang File ISO Ubuntu Server
+   - Pilih VM → Klik **Settings**
+   - Masuk ke tab **Storage**
+   - Klik `Empty` → Klik ikon CD → **Choose a disk file**
+   - Pilih file `.iso` Ubuntu Server
+   - Klik **OK**
 
-### 6. Pasang File ISO Ubuntu Server
-- Pilih VM → Klik **Settings**
-- Masuk ke tab **Storage**
-- Klik `Empty` → Klik ikon CD → **Choose a disk file**
-- Pilih file `.iso` Ubuntu Server
-- Klik **OK**
-
-### 7. Jalankan VM
-- Klik **Start**
+7. Jalankan VM
+   - Klik **Start**
 
 ---
 
-### 🔧 8. Instalasi Ubuntu Server (Subiquity CLI)
+## 🔧 Instalasi Ubuntu Server (Subiquity CLI)
 
 1. **Welcome**: Pilih bahasa → `Enter`  
 2. **Keyboard**: Biarkan default → `Done`  
@@ -78,16 +77,6 @@ Dokumentasi ini menjelaskan langkah-langkah membuat Virtual Machine (VM) untuk U
 12. Keluarkan ISO:
     - **Devices → Optical Drives → Remove disk**
     - Tekan `Enter` di VM
-
----
-
-## 📦 Langkah Selanjutnya
-- Instal & Konfigurasi:
-- Grafana
-- Prometheus
-- Node Exporter
-- Nginx / HAProxy
-- GitLab
 
 ---
 
