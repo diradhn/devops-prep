@@ -18,9 +18,12 @@ Dokumentasi ini menjelaskan langkah-langkah instalasi dan konfigurasi **Node Exp
 1. **Unduh dan Ekstrak**
    ```bash
    cd /tmp
-   curl -LO https://github.com/prometheus/node_exporter/releases/latest/download/node_exporter-1.8.1.linux-amd64.tar.gz
-   tar -xvf node_exporter-*.tar.gz
-   sudo mv node_exporter-*/node_exporter /usr/local/bin/
+   wget https://github.com/prometheus/node_exporter/releases/download/node_exporter/node_exporter-1.9.1.linux-amd64.tar.gz
+
+   # Ekstrak file yang sudah diunduh
+   tar xvfz node_exporter-1.9.1.linux-amd64.tar.gz
+   
+   sudo mv node_exporter-1.9.1.linux-amd64/node_exporter /usr/local/bin/
    ```
 
 2. **Tambahkan User**
@@ -37,6 +40,7 @@ Dokumentasi ini menjelaskan langkah-langkah instalasi dan konfigurasi **Node Exp
    ```bash
    [Unit]
    Description=Node Exporter
+   Wants=network-online.target
    After=network.target
 
    [Service]
@@ -46,7 +50,7 @@ Dokumentasi ini menjelaskan langkah-langkah instalasi dan konfigurasi **Node Exp
    ExecStart=/usr/local/bin/node_exporter
 
    [Install]
-   WantedBy=default.target
+   WantedBy=multi-user.target
    ```
 
 4. **Aktifkan & Jalankan**
@@ -56,7 +60,7 @@ Dokumentasi ini menjelaskan langkah-langkah instalasi dan konfigurasi **Node Exp
    sudo systemctl start node_exporter
    ```
 
-## Verifikasi
+## 🌐 Akses Metrik Node Exporter
 - Cek Status
   ```bash
   sudo systemctl status node_exporter
@@ -69,3 +73,18 @@ Dokumentasi ini menjelaskan langkah-langkah instalasi dan konfigurasi **Node Exp
   node_cpu_seconds_total{cpu="0",mode="idle"} 25483.48
   ...
   ```
+
+## 🔌 Konfigurasi Prometheus untuk Mengambil Metrik 
+```bash
+# Sesuaikan path ke prometheus.yml di server Prometheus Anda
+sudo nano /etc/prometheus/prometheus.yml
+```
+Tambahkan blok job baru di bawah bagian scrape_configs (atau sesuaikan jika sudah ada konfigurasi serupa):
+```bash
+- job_name: 'node_exporter'
+    static_configs:
+      - targets: ['<VM_IP_ADDRESS>:9100'] # Ganti <VM_IP_ADDRESS> dengan IP Ubuntu Server Anda
+```
+```bash
+sudo systemctl restart prometheus
+```
