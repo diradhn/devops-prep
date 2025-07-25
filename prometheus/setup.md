@@ -24,9 +24,9 @@ sudo mkdir /var/lib/prometheus
 Cek versi terbaru di: [prometheus](https://prometheus.io/download/)
 ```bash
 cd /tmp
-wget https://github.com/prometheus/prometheus/releases/download/v2.52.0/prometheus-2.52.0.linux-amd64.tar.gz
-tar xvf prometheus-2.52.0.linux-amd64.tar.gz
-cd prometheus-2.52.0.linux-amd64
+wget https://github.com/prometheus/prometheus/releases/download/v3.5.0/prometheus-3.5.0.linux-amd64.tar.gz
+tar xvf prometheus-3.5.0.linux-amd64.tar.gz
+cd prometheus-3.5.0.linux-amd64
 ```
 
 ### 3. Pindahkan File Biner
