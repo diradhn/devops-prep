@@ -7,7 +7,7 @@ Dokumentasi ini menjelaskan langkah-langkah instalasi dan konfigurasi **Node Exp
 ## 🔧 Tools & Versi
 
 - OS: Ubuntu Server 22.04 (CLI mode)
-- Node Exporter: v1.8.1
+- Node Exporter: v1.9.1
 - Prometheus: (opsional, untuk integrasi)
 - VirtualBox sebagai VM
 
